@@ -1,5 +1,7 @@
 package org.example.leetcode.merge;
 
+import org.example.leetcode.common.BaseArray;
+
 /**
  * @program: Leetcode
  * @description: 给定数组，归并排序
@@ -8,13 +10,13 @@ package org.example.leetcode.merge;
  */
 public class Code1_MergeSoft {
     public static void main(String[] args) {
-        int[] arr = {9, 3, 4, 1, 2, 5, 6, 0, 1, 0, 1, 23, 22, 566, 1};
+        int[] arr = BaseArray.baseArr();
 //        int[] arr = {9, 3, 4, 1};
-        each(arr);
+        BaseArray.each(arr);
         //
         process(arr);
 
-        each(arr);
+        BaseArray.each(arr);
     }
 
     private static void process(int[] arr) {
@@ -41,17 +43,21 @@ public class Code1_MergeSoft {
             while (L < length) {
                 int mid = 0;
                 // 左节点
-                if (length - L >= step) {
+                // 从L开始，往后推 step -1 位置（包含L）
+                if (length - L - 1 >= step - 1) {
+                    // -1 是因为index 从0开始 左组最后一个节点的位置
                     mid = L + step - 1;
                 } else {
                     mid = length - 1;
                 }
-                // 最左边界
+                // 最左边界 不存在右侧数据，结束
                 if (mid == length - 1) {
                     break;
                 }
                 int R = 0;
+                // 从 mid + 1  开始 往后推 step -1 位
                 if (length - 1 - mid >= step) {
+//                  R = mid + 1 + step - 1;
                     R = mid + step;
                 } else {
                     R = length - 1;
@@ -123,10 +129,5 @@ public class Code1_MergeSoft {
         }
     }
 
-    static void each(int[] arr) {
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-        System.out.println(">>");
-    }
+
 }
