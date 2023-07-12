@@ -15,6 +15,6 @@ public class BaseArray {
         for (int i : arr) {
             System.out.print(i + " ");
         }
-        System.out.println(">>");
+        System.out.println("");
     }
 }
