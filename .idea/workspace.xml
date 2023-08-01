@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c62eaf2-5ff2-4468-bb9b-261ccf707b54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/eor/Code1_EorFInd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/eor/Code2_EOR_FindAns.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/eor/Code3_EOR_FindRepetionElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/linked/Code1_LinkedBuildQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/linked/Code2_LinkedBuildStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/linked/Code3_ArrayBuildStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/linked/Code4_ArrayBuildQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/util/ArrayUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/util/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/util/NodeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/leetcode/binery/Code1_BinerySerach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/binery/Code1_BinerySerach.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/leetcode/binery/Code2_BineryAreaMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/binery/Code2_BineryAreaMin.java" afterDir="false" />
-    </list>
+    <list default="true" id="3c62eaf2-5ff2-4468-bb9b-261ccf707b54" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +117,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: 选择，冒泡，插入排序" />
     <MESSAGE value="feat: 快排" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 快排" />
+    <MESSAGE value="feat: 回溯法，获取所有可能情况" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 回溯法，获取所有可能情况" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
