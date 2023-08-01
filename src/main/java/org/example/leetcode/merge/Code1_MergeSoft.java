@@ -11,7 +11,7 @@ import org.example.leetcode.common.BaseArray;
 public class Code1_MergeSoft {
     public static void main(String[] args) {
         int[] arr = BaseArray.baseArr();
-//        int[] arr = {9, 3, 4, 1};
+        // int[] arr = {9, 3, 4, 1};
         BaseArray.each(arr);
         //
         process(arr);
@@ -23,8 +23,55 @@ public class Code1_MergeSoft {
         if (arr == null || arr.length <= 1) {
             return;
         }
-//        recursionProcess(arr, 0, arr.length - 1);
-        mergeSort(arr);
+        // recursionProcess(arr, 0, arr.length - 1);
+        // mergeSort(arr);
+        c_mergeSort(arr);
+    }
+
+    private static void c_mergeSort(int[] arr) {
+        // 非递归，
+        if (arr == null || arr.length == 1) {
+            return;
+        }
+        // 总元素个数
+        int length = arr.length;
+        int step = 1;
+        while (step < length) {
+            int left = 0;
+            while (left < length) {
+                // left + step -1 - 1体现为left 本身占一位
+                // 步长在限定范围内
+                int mid = 0;
+                if (left + step - 1 < length - 1) {
+                    mid = left + step - 1;
+                } else {
+                    mid = length - 1;
+                }
+                // 最左边界 不存在右侧数据，结束
+                if (mid == length - 1) {
+                    break;
+                }
+
+                int right;
+                if (mid + step > length - 1) {
+                    right = length - 1;
+                } else {
+                    right = mid + step;
+                }
+                merge(arr, left, mid, right);
+                if (right == length - 1) {
+                    break;
+                } else {
+                    left = right + 1;
+                }
+            }
+            if (step <= length / 2) {
+                step = step * 2;
+            } else {
+                break;
+            }
+
+        }
     }
 
     /**
@@ -36,7 +83,7 @@ public class Code1_MergeSoft {
         // 二分法 1 2 4 8 16 作为边界
         // 做大index
         int length = arr.length;
-        // 第几步骤
+        // 步长
         int step = 1;
         while (step < length) {
             int L = 0;
@@ -55,9 +102,9 @@ public class Code1_MergeSoft {
                     break;
                 }
                 int R = 0;
-                // 从 mid + 1  开始 往后推 step -1 位
+                // 从 mid + 1 开始 往后推 step -1 位
                 if (length - 1 - mid >= step) {
-//                  R = mid + 1 + step - 1;
+                    // R = mid + 1 + step - 1;
                     R = mid + step;
                 } else {
                     R = length - 1;
@@ -78,7 +125,6 @@ public class Code1_MergeSoft {
                 break;
             }
         }
-
 
     }
 
@@ -106,7 +152,6 @@ public class Code1_MergeSoft {
         // 合并
         merge(arr, left, mid, right);
 
-
     }
 
     private static void merge(int[] arr, int left, int mid, int right) {
@@ -128,6 +173,5 @@ public class Code1_MergeSoft {
             arr[left + h] = help[h];
         }
     }
-
 
 }

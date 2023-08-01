@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * @program: Leetcode
  * @description: 二叉树，是否为平衡搜索二叉树
- * 平衡树：
+ * 平衡树： 高节点 最低节点 高度差 不超过 1
  * 搜索树： 左数节点都比我小 右数节点都比我大
  * 平衡搜索二叉树：
  * @author: liuhao
