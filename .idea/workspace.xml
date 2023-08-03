@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c62eaf2-5ff2-4468-bb9b-261ccf707b54" name="Changes" comment="" />
+    <list default="true" id="3c62eaf2-5ff2-4468-bb9b-261ccf707b54" name="Changes" comment="feat: 回溯法，获取所有可能情况">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/leetcode/merge/soft/Code1_CompareSoft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/merge/soft/Code1_CompareSoft.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +26,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
