@@ -6,7 +6,7 @@ import java.util.Stack;
 
 /**
  * @program: Leetcode
- * @description: 给定一个数组，小于最后一个元素的左边 等于最后一个元素的中间，大于最后一个元素的右边
+ * @description: 给定一个数组，小于最后一个元素的左边 等于最后一个元素的中间，大于最后一个元素的右边 (荷兰国旗问题)
  * @author: liuhao
  * @date: 2023-07-07 17:16
  */
@@ -43,7 +43,7 @@ public class QuickSort {
         while (!stack.isEmpty()) {
             // 限制上下限
             Job pop = stack.pop();
-            // 新的上下限
+            // 等于区域的上下限
             Job job = process3(arr, pop.left, pop.right);
             if (job.left > pop.left) {
 

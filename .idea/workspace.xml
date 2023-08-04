@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c62eaf2-5ff2-4468-bb9b-261ccf707b54" name="Changes" comment="feat: 回溯法，获取所有可能情况">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/leetcode/merge/soft/Code1_CompareSoft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/leetcode/merge/soft/Code1_CompareSoft.java" afterDir="false" />
-    </list>
+    <list default="true" id="3c62eaf2-5ff2-4468-bb9b-261ccf707b54" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +121,8 @@
     <MESSAGE value="feat: 选择，冒泡，插入排序" />
     <MESSAGE value="feat: 快排" />
     <MESSAGE value="feat: 回溯法，获取所有可能情况" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 回溯法，获取所有可能情况" />
+    <MESSAGE value="feat: 归并排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 归并排序" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
