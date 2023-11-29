@@ -17,4 +17,10 @@ public class BaseArray {
         }
         System.out.println("");
     }
+
+    public static void swap(int[] arr, int left, int right) {
+        int item = arr[left];
+        arr[left] = arr[right];
+        arr[right] = item;
+    }
 }

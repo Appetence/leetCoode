@@ -6,7 +6,7 @@ package org.example.leetcode.tree;
  * @author: liuhao
  * @date: 2023-06-26 19:26
  */
-public class Code9_Path_Sum_Count {
+public class Code10_Path_Sum_Count {
     public static void main(String[] args) {
         /**
          *

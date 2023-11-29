@@ -9,6 +9,16 @@ public class Code2_EOR_FindAns {
     findAns(arr);
   }
 
+  public static void main1(String[] args) {
+    int i = 9;
+    // 源码：1001
+    System.out.println(Integer.toBinaryString(i));
+    // 补码：11111111111111111111111111110111
+    System.out.println(Integer.toBinaryString(-i));
+    // 反码：11111111111111111111111111110110
+    System.out.println(Integer.toBinaryString((~i)));
+  }
+
   public static void findAns(int[] arr) {
     // eor result
     int ans = 0;
@@ -17,7 +27,7 @@ public class Code2_EOR_FindAns {
     for (int item : arr) {
       ans = ans ^ item;
     }
-    // 获取某个元素专属
+    // 获取某个元素专属 -ans = (~ans + 1 ) ; ans & -(ans) = 用于获取最右侧为1的那个数据
     int lastOne = ans & (-ans);
     for (int item : arr) {
       // 获取特殊元素
