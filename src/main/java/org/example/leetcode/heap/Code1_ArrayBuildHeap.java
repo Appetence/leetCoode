@@ -39,6 +39,7 @@ public class Code1_ArrayBuildHeap {
     while (heapSize > 0) {
       // 0 - ( length - 1 ) 重新生产大根堆
       lowerRootHeapify(arr, 0, heapSize);
+      // 堆顶的元素是最小的那个，直接移动到最后一位，重新产生小根堆
       BaseArray.swap(arr, 0, --heapSize);
     }
   }
@@ -60,7 +61,7 @@ public class Code1_ArrayBuildHeap {
     while (heapSize > 0) {
       // 0 - ( length - 1 ) 重新生产大根堆
       heapify(arr, 0, heapSize);
-      //将最大的永远限制在末尾
+      // 将最大的永远限制在末尾
       BaseArray.swap(arr, 0, --heapSize);
     }
 

@@ -6,32 +6,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 自定义堆 ，
+ * 自定义堆 
  * 
  */
 public class Code4_HeapGreater {
   public static void main(String[] args) {
-
-    int[] arr = { 7, 3, 4, 5, 6, 1, 2 };
-    ArrayList<Entry<Integer>> arrayList = new ArrayList<Entry<Integer>>();
-    ;
-    for (int value : arr) {
-      Entry<Integer> entry = new Entry<Integer>(value);
-      arrayList.add(entry);
-    }
-    HeapCreaterQuere<Integer> quere = new HeapCreaterQuere<Integer>(arrayList);
-    // 构建堆
+    int arr[] = { 1, 7, 3, 4, 5, 6, 2 };
+    HeapCreaterQuere<Entry<Integer>> quere = new HeapCreaterQuere<Entry<Integer>>();
     for (int idx = 0; idx < arr.length; idx++) {
-      quere.heapInsert(idx);
+      quere.push(arr[idx]);
     }
-    // 排序
-    int length = arr.length;
-    while (length > 0) {
-      quere.heapify(0, --length);
-    }
+    each(quere);
+    System.out.println(quere.pop());
+    each(quere);
+  }
 
-    for (Entry<Integer> item : arrayList) {
-      System.out.print(item.getData() + ",");
+  private static void each(HeapCreaterQuere<Entry<Integer>> quere) {
+    if (!quere.isEmpty()) {
+      System.out.println(quere.each());
     }
   }
 
@@ -51,23 +43,37 @@ class HeapCreaterQuere<T> {
   // 堆
   private ArrayList<Entry<Integer>> heap;
 
-  public HeapCreaterQuere(ArrayList<Entry<Integer>> heap) {
-    this.heap = heap;
-    this.heapSize = heap.size();
+  public HeapCreaterQuere() {
+    this.heap = new ArrayList<>();
+    this.heapSize = 0;
   }
 
-  public boolean add(Integer data) {
+  public boolean isEmpty() {
+    return heapSize == 0;
+  }
+
+  public String each() {
+    String result = "";
+    for (Entry<Integer> heap : heap) {
+      result = result + heap.getData().intValue() + " ";
+    }
+    return result;
+  }
+
+  public Integer push(Integer data) {
     Entry<Integer> entry = new Entry<Integer>(data);
     if (map.containsKey(entry)) {
       // 已存在的对象
-      Integer index = map.get(entry);
+      return map.get(entry);
       // TODO
     } else {
       heap.add(entry);
       map.put(entry, heapSize);
-      heapInsert(heapSize++);
+      int size = heapSize++;
+      heapInsert(size);// 大根堆
+      // 保证每次新增都能走到heapIfy
+      return heapSize - 1;
     }
-    return true;
   }
 
   public void heapInsert(int index) {
@@ -91,41 +97,55 @@ class HeapCreaterQuere<T> {
     map.put(entryOld, newIdx);
   }
 
-  public void heapify(int index, int heapSize) {
+  // 大根堆
+  public void heapify(int index) {
     int left = 2 * index + 1;
     while (heapSize > left) {
-      int min = ((heapSize > left + 1) && (comparator.compare(heap.get(left), heap.get(left + 1)) < 0)) ? left + 1
+      int max = ((heapSize > left + 1) && (comparator.compare(heap.get(left), heap.get(left + 1)) < 0)) ? left + 1
           : left;
-      // 判读最小的节点是哪个
-      min = (comparator.compare(heap.get(min), heap.get(index)) < 0) ? index : min;
-      if (min == index) {
+      // 判读最大的节点是哪个
+      max = (comparator.compare(heap.get(max), heap.get(index)) < 0) ? index : max;
+      if (max == index) {
         break;
       }
-      swap(min, index);
-      index = min;
+      swap(max, index);
+      index = max;
       left = 2 * left + 1;
     }
   }
 
   private boolean resigin(T t1, T t2) {
+
     return false;
   }
 
-  public T peek() {
-
-    return null;
+  public Entry<Integer> peek() {
+    return heap.get(0);
   }
 
-  public T poll() {
-    return null;
+  public Entry<Integer> pop() {
+    Entry<Integer> entry = heap.get(0);
+    swap(0, heapSize - 1);
+    map.remove(entry);
+    heap.remove(--heapSize);
+    heapify(0);
+    return entry;
   }
 
-  public T remove(T data) {
-    return null;
+  public Entry<Integer> remove(Integer data) {
+    Entry<Integer> entry = new Entry(data);
+
+    if (map.containsKey(entry)) {
+      Integer idx = map.remove(entry);
+      heap.remove(idx);
+      return entry;
+    } else {
+      return null;
+    }
   }
 
   public int size() {
-    return -1;
+    return heapSize;
   }
 }
 
