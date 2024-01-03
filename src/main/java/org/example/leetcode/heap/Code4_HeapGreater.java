@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+
+import javax.swing.text.html.Option;
 
 /**
- * 自定义堆 
+ * 自定义堆
  * 
  */
 public class Code4_HeapGreater {
@@ -18,6 +21,8 @@ public class Code4_HeapGreater {
     }
     each(quere);
     System.out.println(quere.pop());
+    each(quere);
+    System.out.println(quere.remove(5));
     each(quere);
   }
 
@@ -72,7 +77,8 @@ class HeapCreaterQuere<T> {
       int size = heapSize++;
       heapInsert(size);// 大根堆
       // 保证每次新增都能走到heapIfy
-      return heapSize - 1;
+
+      return data;
     }
   }
 
@@ -114,8 +120,8 @@ class HeapCreaterQuere<T> {
     }
   }
 
-  private boolean resigin(T t1, T t2) {
-
+  private boolean resign(Integer t1, Integer t2) {
+    
     return false;
   }
 
@@ -123,6 +129,11 @@ class HeapCreaterQuere<T> {
     return heap.get(0);
   }
 
+  /**
+   * 取出头结点
+   * 
+   * @return
+   */
   public Entry<Integer> pop() {
     Entry<Integer> entry = heap.get(0);
     swap(0, heapSize - 1);
@@ -133,11 +144,13 @@ class HeapCreaterQuere<T> {
   }
 
   public Entry<Integer> remove(Integer data) {
-    Entry<Integer> entry = new Entry(data);
 
-    if (map.containsKey(entry)) {
-      Integer idx = map.remove(entry);
-      heap.remove(idx);
+    Optional<Entry<Integer>> option = map.entrySet().stream().filter(item -> item.getKey().getData().equals(data))
+        .map(item -> item.getKey()).findFirst();
+    if (option.isPresent()) {
+      Entry entry = option.get();
+      map.remove(entry);
+      heap.remove(entry);
       return entry;
     } else {
       return null;
