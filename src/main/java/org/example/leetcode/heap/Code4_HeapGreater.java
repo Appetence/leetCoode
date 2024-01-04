@@ -44,13 +44,18 @@ class HeapCreaterQuere<T> {
 
   private int heapSize;
 
-  private Comparator<Entry<Integer>> comparator = new OrderComparator<Entry<Integer>>();;
+  private Comparator<Entry<Integer>> comparator = new OrderComparator<Entry<Integer>>();
   // 堆
   private ArrayList<Entry<Integer>> heap;
 
   public HeapCreaterQuere() {
     this.heap = new ArrayList<>();
     this.heapSize = 0;
+  }
+  public HeapCreaterQuere(Comparator<Entry<Integer>> comparator) {
+    this.heap = new ArrayList<>();
+    this.heapSize = 0;
+    this.comparator= comparator;
   }
 
   public boolean isEmpty() {
