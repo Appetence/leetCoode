@@ -12,12 +12,10 @@ import java.util.Optional;
  * 统计购买数量最多的用户
  */
 public class Code5_OrderCount {
-
-  // 获奖区
-  private static HeapCreaterQuere<Entry<Integer>> giftArea = new HeapCreaterQuere<Entry<Integer>>(
+  private HeapCreaterQuere<Entry<Integer>> giftArea = new HeapCreaterQuere<Entry<Integer>>(
       new WaitOrderComparator(), 3);
   // 候选区
-  private static HeapCreaterQuere<Entry<Integer>> waitArea = new HeapCreaterQuere<Entry<Integer>>(
+  private HeapCreaterQuere<Entry<Integer>> waitArea = new HeapCreaterQuere<Entry<Integer>>(
       new WaitOrderComparator(), 5);
 
   public static void main(String[] args) {
@@ -25,6 +23,8 @@ public class Code5_OrderCount {
     int[] people = { 1, 2, 3, 4, 5, 6, 2, 3, 2, 1, 1 };
     // 行为
     int[] action = { 1, 2, -1, 4, 5, 6, 2, -3, 2, 1, 1 };
+
+    // 获奖区
 
     /**
      * 定义两个堆，一个大根堆（候选区），一个小根堆（得奖区）
