@@ -150,13 +150,16 @@ class WhoYourDaddy {
     this.map = new HashMap<>();
     this.limit = limit;
   }
-
+  /**
+   * all elements
+   * @return
+   */
   public List<Integer> getDaddies() {
     daddyHeap.getAllElements()
     return null;
   }
 /**
- * 当前处理i号事件
+ * 当前处理i号事件 
  * @param i
  * @param j
  * @param k
@@ -172,7 +175,7 @@ class WhoYourDaddy {
 /**
  * 自定义 堆，实现 O(N) 获取指定节点
  */
-class HeapCreaterQuere<T> {
+class  HeapCreaterQuere<T> {
 
   // index
   private Map<Entry<Integer>, Integer> map = new HashMap<Entry<Integer>, Integer>();
