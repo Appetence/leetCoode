@@ -48,6 +48,7 @@ class TrieTree {
         node.nextNodes[idx] = null;
         return 0;
       }
+      // 为何放到最后？ 避免下最后一个节点之前有节点 pass 也为 0 的情况，不可提前（找不到上一个节点了）
       node = node.nextNodes[idx];
     }
     // 注意，最后结束标识也要同步减少

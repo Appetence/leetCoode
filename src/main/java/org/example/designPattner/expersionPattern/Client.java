@@ -26,7 +26,7 @@ public class Client {
   private static HashMap<String, Integer> getValue(String str) throws IOException {
     HashMap<String, Integer> map = new HashMap<>();
     for (char ch : str.toCharArray()) {
-      if (ch != '+') {
+      if (ch != '+' && ch != '/') {
         if (!map.containsKey(String.valueOf(ch))) {
           // 读取
           String in = (new BufferedReader(new InputStreamReader(System.in))).readLine();
