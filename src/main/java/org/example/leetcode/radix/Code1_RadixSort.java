@@ -17,20 +17,22 @@ public class Code1_RadixSort {
   public static void main(String[] args) {
     // 指定数组
     String[] arr = { "22", "123", "154", "101", "225", "6", "97", "18", "49", "101" };
-    radixSort(arr);
+    for (String item : radixSort(arr)) {
+      System.out.println(item);
+    }
   }
 
   /**
    * 
    * @param arr
    */
-  private static void radixSort(String[] arr) {
+  private static String[] radixSort(String[] arr) {
 
     // 1 find max element length
     int maxLength = findMaxLength(arr);
 
     // 2 count number rate
-    radixSort(arr, 1, maxLength);
+    return radixSort(arr, 1, maxLength);
 
     // 3 count size
 
@@ -38,27 +40,34 @@ public class Code1_RadixSort {
 
   }
 
-  private static void radixSort(String[] arr, int handleByte, int maxLength) {
+  private static String[] radixSort(String[] arr, int handleByte, int maxLength) {
+    String[] result = arr;
+    if (handleByte <= maxLength) {
 
-    int[] rateRecord = new int[10];
+      int[] rateRecord = new int[10];
 
-    for (String item : arr) {
-      int value = Integer.valueOf(item.substring(handleByte - 1, handleByte));
-      rateRecord[value]++;
-    }
-    int[] rateCount = new int[10];
-    for (int idx = 0; idx < rateRecord.length; idx++) {
-      if (idx == 0) {
-        rateCount[idx] = rateRecord[idx];
-      } else {
-        // count
-        rateCount[idx] = rateRecord[idx] + rateCount[idx - 1];
+      for (String item : arr) {
+        int value = Integer.valueOf(item.substring(handleByte - 1, handleByte));
+        rateRecord[value]++;
       }
+      int[] rateCount = new int[10];
+      for (int idx = 0; idx < rateRecord.length; idx++) {
+        if (idx == 0) {
+          rateCount[idx] = rateRecord[idx];
+        } else {
+          // count
+          rateCount[idx] = rateRecord[idx] + rateCount[idx - 1];
+        }
+      }
+      String[] arrHelp = new String[arr.length];
+      for (String item : arr) {
+        int value = Integer.valueOf(item.substring(handleByte - 1, handleByte));
+        int i = --rateCount[value];
+        arrHelp[i] = item;
+      }
+      result = radixSort(arrHelp, handleByte + 1, maxLength);
     }
-    for (String item : arr) {
-       int value = Integer.valueOf(item.substring(handleByte - 1, handleByte)); 
-       
-    }
+    return result;
 
   }
 
