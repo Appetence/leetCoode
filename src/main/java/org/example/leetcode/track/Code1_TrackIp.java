@@ -37,6 +37,7 @@ public class Code1_TrackIp {
     }
     for (int i = 1; i < 4 && i <= str.length(); i++) {
       String item = str.substring(0, i);
+      // 当前段长度大于1 但是是以0开头的
       if (item.length() > 1 && item.charAt(0) == '0') {
         break;
       }
@@ -44,7 +45,7 @@ public class Code1_TrackIp {
       if (value > 255) {
         break;
       }
-      trackIp(str.substring(i), cur+ item + ".", num + 1);
+      trackIp(str.substring(i), cur + item + ".", num + 1);
 
     }
   }
