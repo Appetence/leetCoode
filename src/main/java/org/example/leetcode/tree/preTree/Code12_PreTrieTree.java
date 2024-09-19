@@ -8,6 +8,13 @@ import org.example.leetcode.tree.preTree.Code12_PreTrieTree.Tree.Node;
 /**
  * 使用哈希处理
  * 不仅局限于26个字母，还可以处理任意字符
+ * 
+ * 前缀树
+ * 1 经过节点元素统计（节点前，节点后统计）
+ * 2 下一个元素存在校验
+ * 3 移除元素时，校验下通过节点的元素是否为0 ，为0直接置为null
+ * 
+ * 
  */
 public class Code12_PreTrieTree {
   public static void main(String[] args) {

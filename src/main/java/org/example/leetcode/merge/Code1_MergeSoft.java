@@ -10,7 +10,8 @@ import org.example.leetcode.common.BaseArray;
  */
 public class Code1_MergeSoft {
     public static void main(String[] args) {
-        int[] arr = BaseArray.baseArr();
+        // int[] arr = BaseArray.baseArr();
+        int[] arr={3,8,2,1};
         // int[] arr = {9, 3, 4, 1};
         BaseArray.each(arr);
         //
@@ -83,7 +84,7 @@ public class Code1_MergeSoft {
         // 二分法 1 2 4 8 16 作为边界
         // 做大index
         int length = arr.length;
-        // 步长
+        // 步长 每次处理数据长度
         int step = 1;
         while (step < length) {
             int L = 0;

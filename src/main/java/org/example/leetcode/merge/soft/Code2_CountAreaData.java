@@ -9,7 +9,7 @@ public class Code2_CountAreaData {
   public static void main(String[] args) {
     int[] arr = new int[] { 1, -2, 4 };
 
-    int result = count(arr, 0, arr.length - 1, 2, 2);
+    int result = count(arr, 0, arr.length - 1, 2, 4);
     System.out.println(result);
   }
 
@@ -56,7 +56,7 @@ public class Code2_CountAreaData {
       while (windowR <= mid && sum[windowR] <= max) {
         windowR++;
       }
-      // 小于最小值  这里只有保证先排序了，才能确认小数在前边，判断有意义
+      // 小于最小值 这里只有保证先排序了，才能确认小数在前边，判断有意义
       while (windowL <= mid && sum[windowL] < min) {
         windowL++;
       }

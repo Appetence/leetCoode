@@ -7,10 +7,11 @@ public class Code4_ArrayBuildQueue {
   public static void main(String[] args) {
     A_List stack = new A_List(5);
     System.out.println(stack.add(1));
-    System.out.println(stack.add(2));
-    System.out.println(stack.add(3));
-    System.out.println(stack.add(4));
-    System.out.println(stack.add(5));
+    // System.out.println(stack.add(2));
+    // System.out.println(stack.add(3));
+    // System.out.println(stack.add(4));
+    // System.out.println(stack.add(5));
+    System.out.println(stack.poll());
     System.out.println(stack.poll());
 
     System.out.println(stack.add(6));
@@ -53,7 +54,7 @@ class A_List {
 
   public int poll() {
     int idx = (tailIndex - 1) % size;
-    if (idx < size) {
+    if (idx < size && headIndex < tailIndex) {
       int val = arr[headIndex];
       arr[idx] = -1;
       headIndex++;
