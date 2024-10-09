@@ -134,6 +134,18 @@ public class Code_MergeMinRunlSum {
    * 
    * 尽管这个公式看起来复杂，但其实质是利用了对数列的分析和模运算的特性来直接找到解。
    * 
+   * 
+   * f (n , m ) 
+   * 
+   * 0            1      k - 1     k + 1          n - 1            n - 2             上一次的序列
+   * k + 1        k+ 2     0         1            n - 1 = n - k -2    n - k -3        新序列
+   * 
+   *  新序列 h (n - 1 , m ) 
+   * 
+   *  新序列映射为 0 - n -1 的约瑟夫环 f(n - 1, m) 
+   * 
+   *  
+   * 
    * 实现解析
    */
   public static int mathematicalFormula(int n, int m) {
