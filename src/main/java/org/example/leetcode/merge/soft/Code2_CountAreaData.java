@@ -3,7 +3,7 @@ package org.example.leetcode.merge.soft;
 /**
  * 给定一个区间范围 loser upper
  * 
- * 获取arr中在该范围内的子数组
+ * 获取arr中子数组累加之和 在该范围内的
  */
 public class Code2_CountAreaData {
   public static void main(String[] args) {
