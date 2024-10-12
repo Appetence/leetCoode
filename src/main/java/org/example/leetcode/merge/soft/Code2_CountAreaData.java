@@ -41,7 +41,16 @@ public class Code2_CountAreaData {
     }
 
   }
-
+/**
+ * 
+ * @param sum 前置项之和
+ * @param L
+ * @param mid
+ * @param R
+ * @param lower
+ * @param upper
+ * @return
+ */
   private static int merge(int[] sum, int L, int mid, int R, int lower, int upper) {
     int size = 0;
     // 范围区间
@@ -77,6 +86,7 @@ public class Code2_CountAreaData {
       help[hIdx++] = sum[q++];
     }
 
+    // sort 
     for (int idx = 0; idx < help.length; idx++) {
       sum[L + idx] = help[idx];
     }

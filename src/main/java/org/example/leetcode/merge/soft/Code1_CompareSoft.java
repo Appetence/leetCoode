@@ -1,7 +1,9 @@
 package org.example.leetcode.merge.soft;
 
 /**
- * 给定一组数据
+ * 给定一组数据 
+ * 1 左侧节点大于右侧节点之和
+ * 2 右侧节点大于左侧节点之后
  */
 public class Code1_CompareSoft {
   public static void main(String[] args) {
