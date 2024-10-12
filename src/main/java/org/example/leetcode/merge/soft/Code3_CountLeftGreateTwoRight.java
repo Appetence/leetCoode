@@ -80,7 +80,9 @@ public class Code3_CountLeftGreateTwoRight {
       help[idx++] = arr[pL++];
 
     }
-
+    for (int hIdx = 0; hIdx < help.length; hIdx++) {
+      arr[L + hIdx] = help[hIdx];
+    }
     return result;
   }
 
@@ -126,6 +128,9 @@ public class Code3_CountLeftGreateTwoRight {
     while (ppL <= mid) {
       help[idx++] = arr[ppL++];
 
+    }
+    for (int hIdx = 0; hIdx < help.length; hIdx++) {
+      arr[L + hIdx] = help[hIdx];
     }
     return result;
   }
