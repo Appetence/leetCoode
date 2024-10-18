@@ -59,6 +59,7 @@ public class Code2_CountAreaData {
     // 右边的节点
     for (int rBegin = mid + 1; rBegin <= R; rBegin++) {
       int item = sum[rBegin];
+      // 这里的逻辑为 限制 lower , upper 范围内，计算 除去当前节点 新的数据界限 
       int max = item - lower;
       int min = item - upper;
       // 左边 小于最大值
