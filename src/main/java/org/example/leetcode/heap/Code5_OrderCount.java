@@ -1,3 +1,4 @@
+/*
 package org.example.leetcode.heap;
 
 import java.text.Collator;
@@ -11,11 +12,13 @@ import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+*/
 /**
  * 不同时间点，客户购买了商品,获取购买数最多的用户
  * 
  * 统计购买数量最多的用户
- */
+ *//*
+
 public class Code5_OrderCount {
   // 得奖区
 
@@ -28,7 +31,8 @@ public class Code5_OrderCount {
     int prizeLimit = 0;
     // 获奖区
 
-    /**
+    */
+/**
      * 定义两个堆，一个大根堆（候选区），一个小根堆（得奖区）
      * 
      * 用户发生购买行为
@@ -38,7 +42,8 @@ public class Code5_OrderCount {
      * 大于 将得奖区最小 移出 候选区最大进入得奖区
      * 小于
      * 
-     */
+     *//*
+
     takeK(people, action, prizeLimit);
 
   }
@@ -85,9 +90,11 @@ class Entry<T> {
   }
 }
 
+*/
 /**
  * 获奖去比较器
- */
+ *//*
+
 class GiftOrderComparator implements Comparator<Entry<Integer>> {
 
   @Override
@@ -98,9 +105,11 @@ class GiftOrderComparator implements Comparator<Entry<Integer>> {
 
 }
 
+*/
 /**
  * 候选区比较器
- */
+ *//*
+
 class WaitOrderComparator implements Comparator<Entry<Integer>> {
 
   @Override
@@ -150,20 +159,24 @@ class WhoYourDaddy {
     this.map = new HashMap<>();
     this.limit = limit;
   }
-  /**
+  */
+/**
    * all elements
    * @return
-   */
+   *//*
+
   public List<Integer> getDaddies() {
     // daddyHeap.getAllElements()
     return null;
   }
+*/
 /**
  * 当前处理i号事件 
  * @param i
  * @param j
  * @param k
- */
+ *//*
+
   public void operate(int i, int j, int k) {
 
   }
@@ -172,9 +185,11 @@ class WhoYourDaddy {
 
 }
 
+*/
 /**
  * 自定义 堆，实现 O(N) 获取指定节点
- */
+ *//*
+
 class  HeapCreaterQuere<T> {
 
   // index
@@ -272,11 +287,13 @@ class  HeapCreaterQuere<T> {
     return heap.get(0);
   }
 
-  /**
+  */
+/**
    * 取出头结点
    * 
    * @return
-   */
+   *//*
+
   public Entry<Integer> pop() {
     Entry<Integer> entry = heap.get(0);
     swap(0, heapSize - 1);
@@ -303,4 +320,4 @@ class  HeapCreaterQuere<T> {
   public int size() {
     return heapSize;
   }
-}
+}*/
