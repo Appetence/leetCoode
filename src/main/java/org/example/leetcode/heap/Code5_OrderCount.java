@@ -155,7 +155,7 @@ class WhoYourDaddy {
    * @return
    */
   public List<Integer> getDaddies() {
-    daddyHeap.getAllElements()
+    // daddyHeap.getAllElements()
     return null;
   }
 /**
@@ -204,10 +204,10 @@ class  HeapCreaterQuere<T> {
     return result;
   }
 
-  public List<T> getAllElements{
-    return heap.stream().collect(Collectors.toList());
+  // public List<T> getAllElements{
+  //   return heap.stream().collect(Collectors.toList());
 
-  }
+  // }
   public Integer push(Integer data, Integer time) {
     Entry<Integer> entry = new Entry<Integer>(data, time);
     if (map.containsKey(entry)) {
