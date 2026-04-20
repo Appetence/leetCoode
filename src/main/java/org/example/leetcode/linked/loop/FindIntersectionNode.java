@@ -1,4 +1,4 @@
-package org.example.leetcode.linked;
+package org.example.leetcode.linked.loop;
 
 public class FindIntersectionNode {
 
