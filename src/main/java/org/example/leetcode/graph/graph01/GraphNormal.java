@@ -1,18 +1,17 @@
-package com.xiaodai.fund.mgmt.financial.task.graph;
-
-import com.alibaba.fastjson.JSONObject;
+package org.example.leetcode.graph.graph01;
 
 import java.util.*;
 
 public class GraphNormal {
 
-    static int[][] baseData = {{1, 2, 1}, {1, 3, 1}, {2, 4, 1}, {2, 5, 1}, {3, 6, 1}, {3, 7, 1}, {4, 8, 1}, {5, 9, 1}, {6, 10, 1}, {7, 11, 1},};
+    static int[][] baseData = { { 1, 2, 1 }, { 1, 3, 1 }, { 2, 4, 1 }, { 2, 5, 1 }, { 3, 6, 1 }, { 3, 7, 1 },
+            { 4, 8, 1 }, { 5, 9, 1 }, { 6, 10, 1 }, { 7, 11, 1 }, };
 
     public static void main(String[] args) {
 
         Graph graph = createGraph(baseData);
 
-        System.out.println(JSONObject.toJSONString(graph));
+        System.out.println(graph);
         Node node = graph.nodes.values().stream().filter(item -> Objects.nonNull(item.getNexts())).findAny().get();
         bfs(node);
 
@@ -43,7 +42,7 @@ public class GraphNormal {
         System.out.println("Testing TOPOLOGY order verification:");
 
         List<Node> nodes = sortedTopology(graph);
-        System.out.println(JSONObject.toJSONString(nodes));
+        System.out.println(nodes);
     }
 
     public static Graph createGraph(int[][] data) {
@@ -71,7 +70,6 @@ public class GraphNormal {
             fromNode.edges.add(edge);
             graph.edge.add(edge);
         }
-
 
         return graph;
     }
@@ -138,7 +136,6 @@ public class GraphNormal {
 
         Queue<Node> zeroQueue = new LinkedList<>();
         HashMap<Node, Integer> nodeInMap = new HashMap<>();
-
 
         List<Node> result = new ArrayList<>();
 
