@@ -39,3 +39,4 @@ build/
 .DS_Store*.env
 .env
 src/langchain1.2/capter02-model/.env
+src/langchain1.2/capter02-model/.env
