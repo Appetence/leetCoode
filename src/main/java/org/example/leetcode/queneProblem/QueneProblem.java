@@ -2,6 +2,10 @@ package org.example.leetcode.queneProblem;
 
 public class QueneProblem {
 
+    public static void main(String[] args) {
+        int n = 4;
+        System.out.println(sum2(n));
+    }
     public static int sum2(int n) {
         if (n < 1 || n > 32) {
             return 0;

@@ -1,6 +1,6 @@
 package org.example.leetcode.queneProblem;
 
-public class QuereProblemReproduction {
+public class QueneProblemReproduction {
     public static void main(String[] args) {
         int n = 8;
         quereProblem(n);
